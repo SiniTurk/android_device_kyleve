@@ -1,8 +1,13 @@
-# mount 	fstype 		device
-
-/boot 		emmc		/dev/block/mmcblk0p5
-/cache 		ext4		/dev/block/mmcblk0p16
-/data 		ext4		/dev/block/mmcblk0p19
-/recovery 	emmc		/dev/block/mmcblk0p6
-/sdcard 	vfat		/dev/block/mmcblk1p1
-/system 	ext4		/dev/block/mmcblk0p17
+# Android fstab file. 
+#<src>                  <mnt_point>         <type>    	<mnt_flags and options>                              								 	<fs_mgr_flags> 
+/dev/block/mmcblk0p17    /system            ext4      	ro,errors=panic                                                                   		wait 
+/dev/block/mmcblk0p15    /efs               ext4      	nosuid,nodev,noatime,noauto_da_alloc,discard,journal_async_commit,errors=panic    		wait,check 
+/dev/block/mmcblk0p16    /cache             ext4     	nosuid,nodev,noatime,noauto_da_alloc,discard,journal_async_commit,errors=panic    		wait,check 
+  
+# Data partition  
+/dev/block/mmcblk0p19   /data               ext4      	nosuid,nodev,noatime,noauto_da_alloc,discard,journal_async_commit,errors=panic  		wait,check,encryptable=footer 
+  
+# Recovery 
+/dev/block/mmcblk1p1	/sdcard				vfat	 	defaults																				recoveryonly 
+/dev/block/mmcblk0p5	/boot				emmc		defaults																				recoveryonly 
+/dev/block/mmcblk0p6	/recovery			emmc		defaults 																				recoveryonly	

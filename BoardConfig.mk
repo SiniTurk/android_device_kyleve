@@ -13,7 +13,7 @@ TARGET_CPU_VARIANT := cortex-a9
 
 TARGET_BOOTLOADER_BOARD_NAME := hawaii
 
-#BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=456M gpt v3d_mem=67108864 pmem=24M@0x9E800000
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=456M gpt v3d_mem=67108864 pmem=24M@0x9E800000
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
 
@@ -25,15 +25,15 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1395654656
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2189426688
 BOARD_FLASH_BLOCK_SIZE := 262144
 
-BOARD_CACHE_DEVICE := /dev/block/mmcblk0p16
-BOARD_CACHE_FILESYSTEM := ext4
-BOARD_CACHE_FILESYSTEM_OPTIONS := rw
-BOARD_SYSTEM_DEVICE := /dev/block/mmcblk0p17
-BOARD_SYSTEM_FILESYSTEM := ext4
-BOARD_SYSTEM_FILESYSTEM_OPTIONS := rw
-BOARD_DATA_DEVICE := /dev/block/mmcblk0p19
-BOARD_DATA_FILESYSTEM := ext4
-BOARD_DATA_FILESYSTEM_OPTIONS := rw
+#BOARD_CACHE_DEVICE := /dev/block/mmcblk0p16
+#BOARD_CACHE_FILESYSTEM := ext4
+#BOARD_CACHE_FILESYSTEM_OPTIONS := rw
+#BOARD_SYSTEM_DEVICE := /dev/block/mmcblk0p17
+#BOARD_SYSTEM_FILESYSTEM := ext4
+#BOARD_SYSTEM_FILESYSTEM_OPTIONS := rw
+#BOARD_DATA_DEVICE := /dev/block/mmcblk0p19
+#BOARD_DATA_FILESYSTEM := ext4
+#BOARD_DATA_FILESYSTEM_OPTIONS := rw
 
 # Kernel
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
@@ -91,7 +91,7 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charg
 BOARD_RIL_CLASS := ../../../device/samsung/logands/ril/
 
 # Recovery
-#TARGET_RECOVERY_INITRC := device/samsung/logands/ramdisk/init.recovery.hawaii_ss_logan.rc
+TARGET_RECOVERY_INITRC := device/samsung/logands/ramdisk/init.recovery.hawaii_ss_logan.rc
 TARGET_RECOVERY_FSTAB := device/samsung/logands/ramdisk/fstab.hawaii_ss_logan
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 
