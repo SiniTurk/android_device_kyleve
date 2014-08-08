@@ -8,6 +8,7 @@
 /dev/block/mmcblk0p19   /data               ext4      nosuid,nodev,noatime,noauto_da_alloc,discard,journal_async_commit,errors=panic    wait,check,encryptable=footer
 
 # Recovery
-/dev/block/mmcblk1p1	/sdcard				vfat		defaults																		recoveryonly
+# Vold
+/dev/block/vold/179:33 	/sdcard    			vfat  		defaults                                            							recoveryonly
 /dev/block/mmcblk0p5	/boot				emmc		defaults																		recoveryonly
 /dev/block/mmcblk0p6	/recovery			emmc		defaults																		recoveryonly
