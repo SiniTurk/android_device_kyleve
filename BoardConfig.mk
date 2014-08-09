@@ -25,16 +25,6 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1395654656
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2189426688
 BOARD_FLASH_BLOCK_SIZE := 262144
 
-#BOARD_CACHE_DEVICE := /dev/block/mmcblk0p16
-#BOARD_CACHE_FILESYSTEM := ext4
-#BOARD_CACHE_FILESYSTEM_OPTIONS := rw
-#BOARD_SYSTEM_DEVICE := /dev/block/mmcblk0p17
-#BOARD_SYSTEM_FILESYSTEM := ext4
-#BOARD_SYSTEM_FILESYSTEM_OPTIONS := rw
-#BOARD_DATA_DEVICE := /dev/block/mmcblk0p19
-#BOARD_DATA_FILESYSTEM := ext4
-#BOARD_DATA_FILESYSTEM_OPTIONS := rw
-
 # Kernel
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
 TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_defconfig
@@ -92,7 +82,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/logands/ril/
 
 # Recovery
 TARGET_RECOVERY_INITRC := device/samsung/logands/ramdisk/init.recovery.hawaii_ss_logan.rc
-TARGET_RECOVERY_FSTAB := device/samsung/logands/ramdisk/fstab.hawaii_ss_logan
+TARGET_RECOVERY_FSTAB := device/samsung/logands/ramdisk/recovery.fstab
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 
 # healthd
