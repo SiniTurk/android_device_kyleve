@@ -14,14 +14,13 @@ PRODUCT_LOCALES += hdpi
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/logands/overlay
 
-# Init files
+# Init files #device/samsung/logands/ramdisk/init.recovery.hawaii_ss_logan.rc:root/init.recovery.hawaii_ss_logan.rc \
 PRODUCT_COPY_FILES += \
 	device/samsung/logands/ramdisk/init.hawaii_ss_logands.rc:root/init.hawaii_ss_logands.rc \
 	device/samsung/logands/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
 	device/samsung/logands/ramdisk/init.bt.rc:root/init.bt.rc \
 	device/samsung/logands/ramdisk/init.log.rc:root/init.log.rc \
 	device/samsung/logands/ramdisk/lpm.rc:root/lpm.rc \
-	device/samsung/logands/ramdisk/init.recovery.hawaii_ss_logan.rc:root/init.recovery.hawaii_ss_logan.rc \
 	device/samsung/logands/ramdisk/ueventd.hawaii_ss_logan.rc:root/ueventd.hawaii_ss_logan.rc \
 	device/samsung/logands/ramdisk/fstab.hawaii_ss_logan:root/fstab.hawaii_ss_logan
 
