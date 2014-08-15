@@ -17,13 +17,11 @@ BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=456M gpt v3d_mem=67108864 pme
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
 
-TARGET_USERIMAGES_USE_EXT4 := true
-
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1395654656
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2189426688
-BOARD_FLASH_BLOCK_SIZE := 262144
+BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Kernel
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
@@ -82,8 +80,10 @@ BOARD_RIL_CLASS := ../../../device/samsung/logands/ril/
 
 # Recovery
 TARGET_RECOVERY_INITRC := device/samsung/logands/ramdisk/init.recovery.rc
-TARGET_RECOVERY_FSTAB := device/samsung/logands/ramdisk/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/logands/ramdisk/fstab.hawaii_ss_logan
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 
 # healthd
 #BOARD_HAL_STATIC_LIBRARIES := libhealthd.capri
