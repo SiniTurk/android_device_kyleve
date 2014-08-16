@@ -11,13 +11,13 @@ on init
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
     
-	export EXTERNAL_STORAGE /sdcard0
-    export SECONDARY_STORAGE /sdcard1
+	export EXTERNAL_STORAGE /sdcard1
+	export EXTERNAL_STORAGE /sdcard2
 
 	symlink /system/etc /etc
 
-    mkdir /sdcard0
-    mkdir /sdcard1
+	mkdir /sdcard1
+    mkdir /sdcard2
     mkdir /system
     mkdir /data
     mkdir /cache
