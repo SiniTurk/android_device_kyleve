@@ -11,5 +11,5 @@
 /dev/block/platform/sdhci.1/by-name/RECOVERY   /recovery         emmc    defaults                                recoveryonly
 
 # vold-managed volumes ("block device" is actually a sysfs devpath)
-/devices/platform/sdhci.0/mmc_host/mmc2        auto              auto    defaults                                voldmanaged=sdcard:auto
-/devices/platform/sdhci.0/mmc_host/mmc2        auto              auto    defaults                                voldmanaged=extSdCard:auto,noemulatedsd
+/devices/platform/sdhci.0/mmc_host/mmc2        auto              auto    defaults                                voldmanaged=sdcard0:1,nonremovable
+/devices/platform/sdhci.0/mmc_host/mmc2        auto              auto    defaults                                voldmanaged=sdcard1:auto
