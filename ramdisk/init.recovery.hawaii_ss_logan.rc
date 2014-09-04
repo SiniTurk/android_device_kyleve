@@ -14,6 +14,11 @@ on init
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard1
+    export EXTERNAL_STORAGE /sdcard2
+    export EXTERNAL_STORAGE /sdcard3
+    export EXTERNAL_STORAGE /sdcard4
+    export EXTERNAL_STORAGE /sdcard5
+    export EXTERNAL_STORAGE /sdcard6
     
 
     symlink /system/etc /etc
