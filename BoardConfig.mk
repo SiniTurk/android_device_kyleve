@@ -90,8 +90,8 @@ TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 # healthd
 #BOARD_HAL_STATIC_LIBRARIES := libhealthd.capri
 
-# CMHW
-BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/logands/cmhw/
+# CMHW  
+BOARD_HARDWARE_CLASS := device/samsung/logands/cmhw/ # hardware/samsung/cmhw/
 
 # GPS
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/logands/include
