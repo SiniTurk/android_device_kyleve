@@ -13,8 +13,6 @@ on init
     export PATH /sbin:/system/bin
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
-    #export EXTERNAL_STORAGE /sdcard0
-    #export EXTERNAL_STORAGE /sdcard1
     
     symlink /system/etc /etc
 

@@ -9,7 +9,6 @@
 /dev/block/platform/sdhci.1/by-name/userdata   /data             ext4    nosuid,nodev,noauto_da_alloc,barrier=1  wait,check,encryptable=footer,length=-16384
 /dev/block/platform/sdhci.1/by-name/KERNEL     /boot             emmc    defaults                                recoveryonly
 /dev/block/platform/sdhci.1/by-name/RECOVERY   /recovery         emmc    defaults                                recoveryonly
-/dev/block/platform/sdhci.0/by-num/p1          /external_sd      auto    defaults                                recoveryonly
 
 # vold-managed volumes ("block device" is actually a sysfs devpath)
 /devices/platform/sdhci.0/mmc_host/mmc2/mmc2:b368 /storage/sdcard0 vfat  defaults                                voldmanaged=sdcard:auto
