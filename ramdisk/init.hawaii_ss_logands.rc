@@ -1,5 +1,4 @@
 import init.bcm2166x.usb.rc
-import init.bt.rc
 import init.log.rc
 
 on early-init

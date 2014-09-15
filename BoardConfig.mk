@@ -3,6 +3,8 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/samsung/logands/BoardConfigVendor.mk
 
+TARGET_OTA_ASSERT_DEVICE := logands,s7272,GT-S7272
+
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := hawaii
@@ -60,6 +62,8 @@ BOARD_USES_SKTEXTBOX := true
 # Hardware rendering
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/samsung/logands/other/egl.cfg
+TARGET_BOARD_PLATFORM_GPU := hgl
+BOARD_USES_HW_RENDER := true
 BOARD_USE_MHEAP_SCREENSHOT := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
@@ -78,14 +82,20 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charg
 # RIL
 BOARD_RIL_CLASS := ../../../device/samsung/logands/ril/
 
+# Vold
+BOARD_VOLD_MAX_PARTITIONS := 25
+BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
+BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
+
 # Recovery
-TARGET_RECOVERY_INITRC := device/samsung/logands/ramdisk/init.recovery.rc
 TARGET_RECOVERY_FSTAB := device/samsung/logands/ramdisk/fstab.hawaii_ss_logan
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := false
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
+BOARD_HAS_NO_MISC_PARTITION := true
+BOARD_SUPPRESS_EMMC_WIPE := true
 
 # healthd
 #BOARD_HAL_STATIC_LIBRARIES := libhealthd.capri
