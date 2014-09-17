@@ -47,16 +47,12 @@ PRODUCT_PACKAGES += \
 # Device-specific packages
 PRODUCT_PACKAGES += \
 	SamsungServiceMode \
-	Torch \
+	Torch
 
 # Charger
 PRODUCT_PACKAGES += \
 	charger \
 	charger_res_images
-
-# Device Settings
-PRODUCT_PACKAGES += \
-	BCMSettings
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
