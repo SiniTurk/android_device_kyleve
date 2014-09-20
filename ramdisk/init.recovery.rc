@@ -1,4 +1,4 @@
-import /init.recovery.${ro.hardware}.rc
+import /init.recovery.hawaii_ss_logands.rc
 
 on early-init
     # Apply strict SELinux checking of PROT_EXEC on mmap/mprotect calls.
@@ -15,18 +15,19 @@ on init
     export PATH /sbin:/system/bin
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
-    #export EXTERNAL_STORAGE /sdcard
+    export EXTERNAL_STORAGE /sdcard1
 
     symlink /system/etc /etc
 
-    mkdir /boot
-    mkdir /recovery
-    mkdir /sdcard
-    mkdir /internal_sd
-    mkdir /external_sd
-    mkdir /sd-ext
-    mkdir /datadata
-    mkdir /emmc
+    #mkdir /boot
+    #mkdir /recovery
+    mkdir /sdcard0
+	mkdir /sdcard1
+    #mkdir /internal_sd
+    #mkdir /external_sd
+    #mkdir /sd-ext
+    #mkdir /datadata
+    #mkdir /emmc
     mkdir /system
     mkdir /data
     mkdir /cache
