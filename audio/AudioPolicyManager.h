@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2012 The Android Open Source Project
+ * Copyright (C) 2009 The Android Open Source Project
+ * Copyright (C) 2014 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +15,22 @@
  * limitations under the License.
  */
 
-#ifndef _BDROID_BUILDCFG_H
-#define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "GT-S7272"
+#include <stdint.h>
+#include <stdbool.h>
 
-#endif
+#include <hardware_legacy/AudioPolicyManagerBase.h>
+
+namespace android_audio_legacy {
+
+class AudioPolicyManager: public AudioPolicyManagerBase
+{
+
+public:
+                AudioPolicyManager(AudioPolicyClientInterface *clientInterface)
+                : AudioPolicyManagerBase(clientInterface) {}
+
+        virtual ~AudioPolicyManager() {}
+        virtual void setPhoneState(int state);
+};
+};

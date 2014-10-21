@@ -12,28 +12,41 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/logands/overlay
 
 # Init files
 PRODUCT_COPY_FILES += \
+	device/samsung/logands/ramdisk/fstab.hawaii_ss_logands:root/fstab.hawaii_ss_logands \
 	device/samsung/logands/ramdisk/init.hawaii_ss_logands.rc:root/init.hawaii_ss_logands.rc \
 	device/samsung/logands/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
 	device/samsung/logands/ramdisk/init.log.rc:root/init.log.rc \
 	device/samsung/logands/ramdisk/lpm.rc:root/lpm.rc \
-	device/samsung/logands/ramdisk/init.recovery.hawaii_ss_logands.rc:root/init.recovery.hawaii_ss_logands.rc \
 	device/samsung/logands/ramdisk/ueventd.hawaii_ss_logands.rc:root/ueventd.hawaii_ss_logands.rc \
-	device/samsung/logands/ramdisk/fstab.hawaii_ss_logands:root/fstab.hawaii_ss_logands
-	
+	device/samsung/logands/ramdisk/recovery/init.recovery.hawaii_ss_logands.rc:root/init.recovery.hawaii_ss_logands.rc
+
 PRODUCT_COPY_FILES += \
-	device/samsung/logands/other/media_codecs.xml:system/etc/media_codecs.xml \
+	device/samsung/logands/configs/media_codecs.xml:system/etc/media_codecs.xml \
+	device/samsung/logands/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
 	device/samsung/logands/keylayouts/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
 	device/samsung/logands/keylayouts/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
 	device/samsung/logands/keylayouts/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-	device/samsung/logands/keylayouts/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl \
-	device/samsung/logands/keylayouts/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl
+	device/samsung/logands/keylayouts/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl
+
+# Copy Apps
+#PRODUCT_COPY_FILES += \
+#        device/samsung/baffinlite/MultiSIM-Toggle.apk:system/app/MultiSIM-Toggle.apk
+
+# Insecure ADBD
+ADDITIONAL_DEFAULT_PROPERTIES += \
+	ro.adb.secure=3 \
+	persist.sys.root_access=3
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-	setup_fs
+	setup_fs \
+	e2fsck \
+	mkfs.f2fs \
+	fsck.f2fs \
+	fibmap.f2fs
 
 # Usb accessory
 PRODUCT_PACKAGES += \
@@ -42,7 +55,9 @@ PRODUCT_PACKAGES += \
 # Misc other modules
 PRODUCT_PACKAGES += \
 	audio.a2dp.default \
-	audio.usb.default
+	audio.usb.default \
+	audio_policy.hawaii \
+	audio.r_submix.default
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
@@ -57,6 +72,7 @@ PRODUCT_PACKAGES += \
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
 	frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
 	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
 	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
@@ -66,10 +82,13 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
 	frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
 	frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
+	frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+	frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
 	frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
 	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 # Support for Browser's saved page feature. This allows
@@ -86,6 +105,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mobiledata.interfaces=rmnet0 \
     ro.telephony.ril_class=SamsungBCMRIL \
     ro.zygote.disable_gl_preload=true \
+    ro.cm.hardware.cabc=/sys/class/mdnie/mdnie/cabc \
+    persist.radio.multisim.config=dsds \
+    ro.telephony.call_ring.multiple=0 \
+	cm.updater.uri=http://lanserver.pp.ua/cm/ \
+    ro.telephony.call_ring=0
 
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
@@ -105,17 +129,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
-# call dalvik heap config
-$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+# Dalvik heap config
+include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+$(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-$(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
-
-
+ifeq ($(TARGET_BUILD_VARIANT),user)      
+else      
+endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_logands
