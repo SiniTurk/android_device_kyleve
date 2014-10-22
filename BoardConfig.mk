@@ -128,6 +128,3 @@ BOARD_SEPOLICY_DIRS += \
 
 BOARD_SEPOLICY_UNION += \
     file_contexts
-
-# Apps on External SD card
-TARGET_EXTERNAL_APPS = sdcard1	
