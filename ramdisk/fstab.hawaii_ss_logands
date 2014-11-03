@@ -13,5 +13,6 @@
 #/dev/block/platform/sdhci.1/by-name/HIDDEN    /preload 	     ext4 	 defaults 					                                 defaults
 
 # vold-managed volumes ("block device" is actually a sysfs devpath)
-/devices/platform/sdhci.0/mmc_host/mmc2/mmc2:b368 /storage/sdcard0 vfat  defaults                                voldmanaged=sdcard:auto
-/devices/platform/sdhci.2/mmc_host/mmc1/mmc1:0001 /storage/sdcard1 vfat  defaults                                voldmanaged=sdcard:auto
+/devices/platform/sdhci.0/mmc_host/mmc2/mmc2:b368 /storage/sdcard0 vfat  defaults                                					 voldmanaged=sdcard:auto
+/devices/platform/sdhci.2/mmc_host/mmc1/mmc1:0001 /storage/sdcard1 vfat  defaults                                					 voldmanaged=sdcard:auto
+#/devices/platform/dwc_otg/usb1 	  		  auto              auto     defaults                                                    voldmanaged=usbdisk:auto

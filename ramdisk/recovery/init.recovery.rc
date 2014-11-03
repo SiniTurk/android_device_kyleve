@@ -1,4 +1,4 @@
-import /init.recovery.hawaii_ss_logands.rc
+import /init.recovery.hawaii_ss_logan.rc
 
 on early-init
     # Apply strict SELinux checking of PROT_EXEC on mmap/mprotect calls.
@@ -22,8 +22,8 @@ on init
 
 	#mkdir /boot
     #mkdir /recovery
-    mkdir /sdcard0
-	mkdir /sdcard1
+    #mkdir /sdcard0
+	#mkdir /sdcard1
     #mkdir /internal_sd
 	#mkdir /external_sd
     #mkdir /sd-ext

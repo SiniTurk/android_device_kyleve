@@ -7,12 +7,15 @@ $(call inherit-product-if-exists, vendor/samsung/logands/logands-common-vendor.m
 
 # Use high-density artwork where available
 PRODUCT_LOCALES += hdpi
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/logands/overlay
 
 # Init files
 PRODUCT_COPY_FILES += \
 	device/samsung/logands/ramdisk/fstab.hawaii_ss_logands:root/fstab.hawaii_ss_logands \
+	device/samsung/logands/ramdisk/init.rc:root/init.rc \
 	device/samsung/logands/ramdisk/init.hawaii_ss_logands.rc:root/init.hawaii_ss_logands.rc \
 	device/samsung/logands/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
 	device/samsung/logands/ramdisk/init.log.rc:root/init.log.rc \
@@ -21,8 +24,9 @@ PRODUCT_COPY_FILES += \
 	device/samsung/logands/ramdisk/recovery/init.recovery.hawaii_ss_logands.rc:root/init.recovery.hawaii_ss_logands.rc
 
 PRODUCT_COPY_FILES += \
-	device/samsung/logands/configs/media_codecs.xml:system/etc/media_codecs.xml \
-	device/samsung/logands/configs/media_profiles.xml:system/etc/media_profiles.xml
+	device/samsung/logands/configs/media_profiles.xml:system/etc/media_profiles.xml \
+	device/samsung/logands/configs/audio_policy.conf:system/etc/audio_policy.conf \
+	device/samsung/logands/configs/media_codecs.xml:system/etc/media_codecs.xml 
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
@@ -36,9 +40,9 @@ PRODUCT_COPY_FILES += \
 #        device/samsung/baffinlite/MultiSIM-Toggle.apk:system/app/MultiSIM-Toggle.apk
 
 # Insecure ADBD
-ADDITIONAL_DEFAULT_PROPERTIES += \
-	ro.adb.secure=3 \
-	persist.sys.root_access=3
+#ADDITIONAL_DEFAULT_PROPERTIES += \
+#	ro.adb.secure=3 \
+#	persist.sys.root_access=3
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -56,7 +60,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	audio.a2dp.default \
 	audio.usb.default \
-	audio_policy.hawaii \
+	audio_policy_logands.hawaii \
 	audio.r_submix.default
 
 # Device-specific packages
@@ -105,12 +109,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mobiledata.interfaces=rmnet0 \
     ro.telephony.ril_class=SamsungBCMRIL \
     ro.zygote.disable_gl_preload=true \
-    ro.cm.hardware.cabc=/sys/class/mdnie/mdnie/cabc \
-    persist.radio.multisim.config=dsds \
-    ro.telephony.call_ring.multiple=0 \
 	cm.updater.uri=http://lanserver.pp.ua/cm/ \
-    ro.telephony.call_ring=0
-
+    persist.radio.multisim.config=dsds
+    
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -142,6 +143,9 @@ ifeq ($(TARGET_BUILD_VARIANT),user)
 else      
 endif
 
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.cm.display.version=$(BUILD_VERSION)-$(LUNCH)-BUILD 2
+	
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_logands
 PRODUCT_DEVICE := logands
