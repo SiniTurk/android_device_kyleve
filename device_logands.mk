@@ -110,7 +110,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungBCMRIL \
     ro.zygote.disable_gl_preload=true \
 	cm.updater.uri=http://lanserver.pp.ua/cm/ \
-    persist.radio.multisim.config=dsds
+    persist.radio.multisim.config=none \
+	ro.telephony.call_ring.multiple=0 \
+	ro.telephony.call_ring=0
     
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
@@ -143,9 +145,6 @@ ifeq ($(TARGET_BUILD_VARIANT),user)
 else      
 endif
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.cm.display.version=$(BUILD_VERSION)-$(LUNCH)-BUILD 2
-	
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_logands
 PRODUCT_DEVICE := logands
