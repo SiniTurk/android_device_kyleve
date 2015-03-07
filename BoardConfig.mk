@@ -78,10 +78,10 @@ TARGET_USES_ION := true
 HWUI_COMPILE_FOR_PERF := true
 
 # libutils
-#COMMON_GLOBAL_CFLAGS += -DREFBASE_JB_MR1_COMPAT_SYMBOLS
+COMMON_GLOBAL_CFLAGS += -DREFBASE_JB_MR1_COMPAT_SYMBOLS
 
 # libwvm.so
-#COMMON_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
+COMMON_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
 
 # opengl
 BOARD_USE_BGRA_8888 := true
@@ -113,11 +113,11 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
-BOARD_HAS_NO_MISC_PARTITION := true
-BOARD_RECOVERY_HANDLES_MOUNT := true
-BOARD_USES_MMCUTILS := false
-BOARD_RECOVERY_ALWAYS_WIPES := false
-BOARD_SUPPRESS_EMMC_WIPE := true
+#BOARD_HAS_NO_MISC_PARTITION := true
+#BOARD_RECOVERY_HANDLES_MOUNT := true
+#BOARD_USES_MMCUTILS := false
+#BOARD_RECOVERY_ALWAYS_WIPES := false
+#BOARD_SUPPRESS_EMMC_WIPE := true
 
 # CMHW
 BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/logands/cmhw/
@@ -136,20 +136,4 @@ BOARD_SEPOLICY_DIRS += \
     device/samsung/logands/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-    file_contexts \
-	property_contexts \
-    service_contexts \
-    bkmgrd.te \
-    device.te \
-    geomagneticd.te \
-    gpsd.te \
-    init.te \
-    immvibed.te \
-    kernel.te \
-    macloader.te \
-    rild.te \
-    shell.te \
-    system_app.te \
-    system_server.te \
-    tvserver.te \
-    vclmk.te
+    file_contexts

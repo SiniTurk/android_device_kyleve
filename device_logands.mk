@@ -14,6 +14,7 @@ PRODUCT_COPY_FILES += \
 	device/samsung/logands/ramdisk/fstab.hawaii_ss_logands:root/fstab.hawaii_ss_logands \
 	device/samsung/logands/ramdisk/init.hawaii_ss_logands.rc:root/init.hawaii_ss_logands.rc \
 	device/samsung/logands/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
+	device/samsung/logands/ramdisk/init.rc:root/init.rc \
 	device/samsung/logands/ramdisk/init.log.rc:root/init.log.rc \
 	device/samsung/logands/ramdisk/ueventd.hawaii_ss_logands.rc:root/ueventd.hawaii_ss_logands.rc \
 	device/samsung/logands/ramdisk/recovery/init.recovery.hawaii_ss_logands.rc:root/init.recovery.hawaii_ss_logands.rc
