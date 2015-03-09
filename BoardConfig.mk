@@ -23,8 +23,7 @@ BOARD_KERNEL_CMDLINE :=
 #BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=456M gpt v3d_mem=67108864 pmem=24M@0x9E800000
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
-TARGET_GCC_VERSION_EXP := 4.6
+#TARGET_GCC_VERSION_EXP := 4.8
 TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_defconfig
 TARGET_KERNEL_SOURCE := device/samsung/logands/kernel
 
@@ -104,7 +103,9 @@ BOARD_BATTERY_DEVICE_NAME := "battery"
 BOARD_HAL_STATIC_LIBRARIES := libhealthd-logands.hawaii
 
 # RIL
+BOARD_VENDOR := samsung
 BOARD_RIL_CLASS := ../../../device/samsung/logands/ril/
+PRODUCT_PACKAGES += com.android.services.telephony.common
 
 # Recovery
 #TARGET_RECOVERY_INITRC := 
@@ -114,11 +115,11 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
-#BOARD_HAS_NO_MISC_PARTITION := true
-#BOARD_RECOVERY_HANDLES_MOUNT := true
-#BOARD_USES_MMCUTILS := false
-#BOARD_RECOVERY_ALWAYS_WIPES := false
-#BOARD_SUPPRESS_EMMC_WIPE := true
+BOARD_HAS_NO_MISC_PARTITION := true
+BOARD_RECOVERY_HANDLES_MOUNT := true
+BOARD_USES_MMCUTILS := false
+BOARD_RECOVERY_ALWAYS_WIPES := false
+BOARD_SUPPRESS_EMMC_WIPE := true
 
 # CMHW
 BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/logands/cmhw/
@@ -137,4 +138,20 @@ BOARD_SEPOLICY_DIRS += \
     device/samsung/logands/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-    file_contexts
+    file_contexts \
+    property_contexts \
+    service_contexts \
+    bkmgrd.te \
+    device.te \
+    geomagneticd.te \
+    gpsd.te \
+    init.te \
+    immvibed.te \
+    kernel.te \
+    macloader.te \
+    rild.te \
+    shell.te \
+    system_app.te \
+    system_server.te \
+    tvserver.te \
+    vclmk.te

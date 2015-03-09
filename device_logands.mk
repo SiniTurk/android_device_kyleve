@@ -71,12 +71,17 @@ PRODUCT_PACKAGES += \
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
+	libsecril-client \
 	SamsungServiceMode \
 	Torch
 
 # Charger
 PRODUCT_PACKAGES += \
 	charger_res_images
+	
+# KSM
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.ksm.default=1	
 	
 # Wi-Fi
 PRODUCT_PACKAGES += \
