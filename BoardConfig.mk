@@ -81,7 +81,6 @@ BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DHAWAII_HWC
 BOARD_EGL_NEEDS_FNW := true
-BOARD_EGL_SKIP_FIRST_DEQUEUE := true
 TARGET_USES_ION := true
 HWUI_COMPILE_FOR_PERF := true
 
@@ -92,7 +91,7 @@ HWUI_COMPILE_FOR_PERF := true
 #COMMON_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
 
 # opengl
-BOARD_USE_BGRA_8888 := true
+#BOARD_USE_BGRA_8888 := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -136,10 +135,10 @@ BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/logands/cmhw/
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/logands/include
 
 # Compat
-TARGET_USES_LOGD := false
+#TARGET_USES_LOGD := false
 
 # jemalloc causes a lot of random crash on free()
-MALLOC_IMPL := dlmalloc
+#MALLOC_IMPL := dlmalloc
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
