@@ -271,7 +271,7 @@ on boot
     setprop ro.telephony.call_ring.multiple 0
 	
 # Enable dithering algorithm
-    setprop fb.force.dithering 1	
+    #setprop fb.force.dithering 1	
 
 # permissions for gps.
 	mkdir /data/gps 0770 gps system
