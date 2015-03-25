@@ -150,6 +150,7 @@ BOARD_SEPOLICY_UNION += \
     service_contexts \
     bkmgrd.te \
     device.te \
+	surfaceflinger.te \
     geomagneticd.te \
     gpsd.te \
     init.te \
