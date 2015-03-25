@@ -85,13 +85,13 @@ TARGET_USES_ION := true
 HWUI_COMPILE_FOR_PERF := true
 
 # libutils
-#COMMON_GLOBAL_CFLAGS += -DREFBASE_JB_MR1_COMPAT_SYMBOLS
+COMMON_GLOBAL_CFLAGS += -DREFBASE_JB_MR1_COMPAT_SYMBOLS
 
 # libwvm.so
-#COMMON_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
+COMMON_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
 
 # opengl
-#BOARD_USE_BGRA_8888 := true
+BOARD_USE_BGRA_8888 := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -135,10 +135,10 @@ BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/logands/cmhw/
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/logands/include
 
 # Compat
-#TARGET_USES_LOGD := false
+TARGET_USES_LOGD := false
 
 # jemalloc causes a lot of random crash on free()
-#MALLOC_IMPL := dlmalloc
+MALLOC_IMPL := dlmalloc
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
