@@ -12,3 +12,5 @@ allow rild block_device:dir search;
 
 # /proc/bcm_fuse_net_config
 allow rild proc:file write;
+
+allow rild device:chr_file { read write };

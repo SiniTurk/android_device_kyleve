@@ -151,6 +151,7 @@ BOARD_SEPOLICY_UNION += \
     device.te \
 	surfaceflinger.te \
     geomagneticd.te \
+	bluetooth.te \
     gpsd.te \
     init.te \
     immvibed.te \
