@@ -12,5 +12,5 @@ allow rild block_device:dir search;
 
 # /proc/bcm_fuse_net_config
 allow rild proc:file write;
-
-allow bcm_irpc device:chr_file { read write ioctl open };
+allow rild block_device:chr_file { read write };
+allow bcm_irpc block_device:chr_file { read write };
