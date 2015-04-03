@@ -16,12 +16,12 @@
 #/dev/modem_fmt            u:object_r:radio_device:s0 
 #/dev/modem_rfs            u:object_r:radio_device:s0 
 #/dev/s3c2410_serial3      u:object_r:radio_device:s0 
-/dev/s3c2410_serial1      u:object_r:gps_device:s0  
-/dev/bcm_unicam           u:object_r:camera_device:s0 
-/dev/i2c-[0-9]            u:object_r:camera_device:s0            
-/dev/bcm_isp2             u:object_r:camera_device:s0
-/dev/mm_isp2              u:object_r:camera_device:s0 
-/dev/bcm_jpeg             u:object_r:camera_device:s0 
+#/dev/s3c2410_serial1      u:object_r:gps_device:s0  
+#/dev/bcm_unicam           u:object_r:camera_device:s0 
+#/dev/i2c-[0-9]            u:object_r:camera_device:s0            
+#/dev/bcm_isp2             u:object_r:camera_device:s0
+#/dev/mm_isp2              u:object_r:camera_device:s0 
+#/dev/bcm_jpeg             u:object_r:camera_device:s0 
 #/dev/bcm_rpc		  	  u:object_r:radio_device:s0
 #/dev/bcm_irpc		      u:object_r:radio_device:s0
 
@@ -30,6 +30,7 @@
 /sys/devices/platform/bcmbt-rfkill.1/rfkill/rfkill0/type -- u:object_r:sysfs_bluetooth_writable:s0
 
 /dev/ttyS0                                          u:object_r:hci_attach_dev:s0
+/dev/ttyS1											u:object_r:gps_device:s0
 /dev/ttyS2                                          u:object_r:gps_device:s0
 /dev/bcm_gps                                        u:object_r:gps_device:s0
 
@@ -46,7 +47,7 @@
 /system/bin/geomagneticd                            u:object_r:geomagneticd_exec:s0
 /system/bin/immvibed                                u:object_r:immvibed_exec:s0
 /system/bin/macloader                               u:object_r:macloader_exec:s0
-#/system/bin/tvserver                                u:object_r:tvserver_exec:s0
+/system/bin/tvserver                                u:object_r:tvserver_exec:s0
 /system/bin/bkmgrd                                  u:object_r:bkmgrd_exec:s0
-#/system/bin/vclmk                                   u:object_r:vclmk_exec:s0
+/system/bin/vclmk                                   u:object_r:vclmk_exec:s0
 /system/bin/glgps                                   u:object_r:gpsd_exec:s0

@@ -1,6 +1,10 @@
 #
 # LOGANDS (GT-S7272)
 #
+persist.brcm.log=none
+persist.brcm.cp_crash=none
+persist.brcm.ap_crash=none
+
 rild.libpath=/system/lib/libbrcm_ril.so
 #rild.libargs=-d /dev/ttyS0
 ro.sf.lcd_density=240
@@ -13,12 +17,14 @@ ro.product.max_num_touch=2
 
 net.streaming.rtsp.uaprof=http://wap.samsungmobile.com/uaprof/
 
+# Multimedia property for Smart View
+media.enable-commonsource=true
+
 ro.opengles.version=131072
 debug.hwui.render_dirty_regions=false
-brcm.graphics.async_errors=false
+brcm.graphics.async_errors=true
 brcm.hwc.no-hdmi-trans=1
 
 ro.ril.hsxpa=1
 ro.ril.gprsclass=10
-persist.sys.dataprefer.simid=0
 ro.com.google.gmsversion=4.1_r4

@@ -151,7 +151,6 @@ BOARD_SEPOLICY_UNION += \
     device.te \
 	surfaceflinger.te \
     geomagneticd.te \
-	bluetooth.te \
     gpsd.te \
     init.te \
     immvibed.te \
@@ -159,7 +158,6 @@ BOARD_SEPOLICY_UNION += \
     macloader.te \
     rild.te \
     shell.te \
-    system_app.te \
     system_server.te \
     tvserver.te \
     vclmk.te
