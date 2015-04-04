@@ -150,6 +150,7 @@ BOARD_SEPOLICY_UNION += \
     bkmgrd.te \
     device.te \
 	surfaceflinger.te \
+	bluetooth.te \
     geomagneticd.te \
     gpsd.te \
     init.te \
