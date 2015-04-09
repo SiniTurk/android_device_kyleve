@@ -14,4 +14,3 @@ allow rild block_device:dir search;
 allow rild proc:file write;
 allow rild gps_device:chr_file rw_file_perms;
 allow rild block_device:chr_file rw_file_perms;
-allow bcm_irpc block_device:chr_file rw_file_perms;
