@@ -70,9 +70,9 @@ PRODUCT_PACKAGES += \
 	audio.primary.default
 
 # Device-specific packages
+# libsecril-client \
+# libusb_config \
 PRODUCT_PACKAGES += \
-	libsecril-client \
-	libusb_config \
 	SamsungServiceMode \
 	Torch
 
