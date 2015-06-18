@@ -38,7 +38,7 @@ on init
 	symlink /efs /factory
 	symlink /dev/block/mmcblk0p11 /dev/block/param
 
-	mkdir /preload 0771 system system 	
+	#mkdir /preload 0771 system system 	
 
 on post-fs-data
 # we will remap this as /storage/sdcard with the sdcard fuse tool
@@ -308,30 +308,27 @@ on boot
 # SEC_PRODUCT_FEATURE_COMMON_USE_MULTISIM
     setprop ro.multisim.simslotcount 2
 	
-	chown radio system /sys/power/cpufreq_table
-    chown radio system /sys/power/cpufreq_max_limit
-    chown radio system /sys/power/cpufreq_min_limit
-    chown radio system /sys/devices/system/cpu/cpufreq/pegasusq/max_cpu_lock
-    chown radio system /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_lock
-    chown radio system /sys/devices/system/cpu/busfreq/curr_freq
-    chmod 0660 /sys/power/cpufreq_table
-    chmod 0660 /sys/power/cpufreq_max_limit
-    chmod 0660 /sys/power/cpufreq_min_limit
-    chmod 0660 /sys/class/power_supply/battery/siop_activated
-    chmod 0660 /sys/class/power_supply/battery/siop_level
-    chmod 0660 /sys/devices/system/cpu/cpufreq/pegasusq/max_cpu_lock
-    chmod 0660 /sys/devices/system/cpu/cpufreq/pegasusq/hotplug_lock
-    chmod 0660 /sys/devices/system/cpu/busfreq/curr_freq	
-	
-# for ril_prop
-    chown radio radio /proc/LinuStoreIII/ril_prop
+#    # for multi csc
+    chown radio radio /proc/LinuStoreIII/efs_info 
+    chmod 0664 /proc/LinuStoreIII/efs_info
+#    # for protecting key string
+    chown radio radio /proc/LinuStoreIII/keystr 
+    chmod 0664 /proc/LinuStoreIII/keystr
+#    # for ril_prop
+    chown radio radio /proc/LinuStoreIII/ril_prop 
     chmod 0664 /proc/LinuStoreIII/ril_prop
+#    # for fsbuild_check
+    chown radio radio /proc/LinuStoreIII/fsbuild_check 
+    chmod 0664 /proc/LinuStoreIII/fsbuild_check
+#    # for recovery_opts
+    chown system radio /proc/LinuStoreIII/recovery_opts 
+    chmod 0664 /proc/LinuStoreIII/recovery_opts
 		
 # Audio (Earjack)
     chown system radio /sys/class/audio/earjack/select_jack
     chown system radio /sys/class/audio/earjack/key_state
     chown system radio /sys/class/audio/earjack/state
-    chown media system /sys/class/audio/earjack/reselect_jack 
+    chown media system /sys/class/audio/earjack/reselect_jack  
 
 # Battery node
     chown system radio /sys/class/power_supply/battery/batt_charging_source
@@ -440,16 +437,8 @@ on boot
    write /sys/block/zram0/initstate 1
 
 # serial_no permission change
-    #touch /efs/FactoryApp/serial_no
     chmod 0770 /efs/FactoryApp/serial_no
     chown system system /efs/FactoryApp/serial_no
-	
-on charger
-# CPU Frequency Governor
-	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
-
-# EHCI runtime enable for LPA
-	write /sys/devices/platform/s5p-ehci/power/control auto
     
 on fs
     mount_all /fstab.hawaii_ss_logands
@@ -533,20 +522,15 @@ on post-fs
     chown radio system /efs
     chmod 0771 /efs
 	
-on property:persist.sys.storage_preload=1
-    mount ext4 /dev/block/mmcblk0p18 /preload nosuid nodev noatime wait ro
-    setprop storage.preload.complete 1
+#on property:persist.sys.storage_preload=1
+#    mount ext4 /dev/block/mmcblk0p18 /preload nosuid nodev noatime wait ro
+#    setprop storage.preload.complete 1
 
-on property:persist.sys.storage_preload=0
-    exec /system/bin/umount /preload 	
+#on property:persist.sys.storage_preload=0
+#    exec /system/bin/umount /preload 	
 
 on property:ro.debuggable=1
     start console
-	
-	service charger /sbin/healthd -c
-		class charger
-		critical
-		seclabel u:r:healthd:s0	
 	
 # create virtual SD card at /mnt/sdcard, based on the /data/media directory
 # daemon will drop to user/group system/media_rw after initializing
@@ -718,3 +702,6 @@ on property:dev.bootcomplete=1
 
 on property:ro.dumpstate.dmesg=1
 		write /proc/sys/kernel/dmesg_restrict 0
+		
+service battery_charger /charger
+    class charger		

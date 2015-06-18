@@ -14,11 +14,6 @@ TARGET_CPU_VARIANT := cortex-a9
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_BOOTLOADER_BOARD_NAME := hawaii
-TARGET_ARCH_VARIANT_CPU := cortex-a9
-TARGET_ARCH_VARIANT_FPU := neon
-ARCH_ARM_HAVE_ARMV7A := true
-ARCH_ARM_HAVE_VFP := true
-ARCH_ARM_HAVE_NEON := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := logands,S7272,GT-S7272,hawaii
@@ -31,9 +26,6 @@ BOARD_KERNEL_PAGESIZE := 4096
 #TARGET_GCC_VERSION_EXP := 4.8
 TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_cm_defconfig
 TARGET_KERNEL_SOURCE := device/samsung/logands/kernel
-
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
 
 # PARTITION SIZE
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -51,14 +43,15 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/logands/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/samsung/logands/bluetooth/libbt_vndcfg_s7272.txt
 
 # Connectivity - Wi-Fi
-WPA_BUILD_SUPPLICANT := true
+BOARD_HAVE_SAMSUNG_WIFI     := true
+WPA_BUILD_SUPPLICANT 		:= true
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_HOSTAPD_DRIVER        := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
 BOARD_WLAN_DEVICE           := bcmdhd
-BOARD_WLAN_DEVICE_REV       := bcm4330
+BOARD_WLAN_DEVICE_REV       := bcm4330_b1
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/dhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA     := "/system/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/system/etc/wifi/bcmdhd_apsta.bin"
@@ -67,21 +60,22 @@ WIFI_DRIVER_MODULE_NAME     := "dhd"
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/wifi/bcmdhd_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_DRIVER_MODULE_AP_ARG   := "firmware_path=/system/etc/wifi/bcmdhd_apsta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_BAND                   := 802_11_ABG
-BOARD_HAVE_SAMSUNG_WIFI     := true
 
 # Resolution
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
 # Hardware rendering
-USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/samsung/logands/configs/egl.cfg
+USE_OPENGL_RENDERER := true
 BOARD_USE_MHEAP_SCREENSHOT := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
-TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
-COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DHAWAII_HWC
 TARGET_USES_ION := true
 HWUI_COMPILE_FOR_PERF := true
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DHAWAII_HWC
+
+# Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
 
 # libutils
 COMMON_GLOBAL_CFLAGS += -DREFBASE_JB_MR1_COMPAT_SYMBOLS
@@ -95,6 +89,14 @@ BOARD_USE_BGRA_8888 := true
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 
+# Enable dex-preoptimization to speed up the first boot sequence
+# of an SDK AVD. Note that this operation only works on Linux for now
+ifeq ($(HOST_OS),linux)
+  ifeq ($(WITH_DEXPREOPT),)
+    WITH_DEXPREOPT := true
+  endif
+endif
+
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
@@ -102,13 +104,14 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 # Charger
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 
+# Sensor
+SENSORS_NEED_SETRATE_ON_ENABLE := true
+
 # healthd
 BOARD_HAL_STATIC_LIBRARIES := libhealthd-logands.hawaii
 
 # RIL
-BOARD_VENDOR := samsung
 BOARD_RIL_CLASS := ../../../device/samsung/logands/ril/
-PRODUCT_PACKAGES += com.android.services.telephony.common
 
 # Recovery
 #TARGET_RECOVERY_INITRC := 

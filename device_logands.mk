@@ -12,13 +12,14 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/logands/overlay
 # Init files
 PRODUCT_COPY_FILES += \
 	device/samsung/logands/ramdisk/fstab.hawaii_ss_logands:root/fstab.hawaii_ss_logands \
-	device/samsung/logands/ramdisk/init.hawaii_ss_logands.rc:root/init.hawaii_ss_logands.rc \
-	device/samsung/logands/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
 	device/samsung/logands/ramdisk/init.rc:root/init.rc \
+	device/samsung/logands/ramdisk/init.hawaii_ss_logan.rc:root/init.hawaii_ss_logan.rc \
+	device/samsung/logands/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
 	device/samsung/logands/ramdisk/init.log.rc:root/init.log.rc \
-	device/samsung/logands/ramdisk/ueventd.hawaii_ss_logands.rc:root/ueventd.hawaii_ss_logands.rc \
-	device/samsung/logands/ramdisk/charger:root/charger
-
+	device/samsung/logands/ramdisk/lpm.rc:root/lpm.rc \
+	device/samsung/logands/ramdisk/charger:root/charger \
+	device/samsung/logands/ramdisk/ueventd.hawaii_ss_logands.rc:root/ueventd.hawaii_ss_logands.rc
+	
 PRODUCT_COPY_FILES += \
 	device/samsung/logands/configs/media_profiles.xml:system/etc/media_profiles.xml \
 	device/samsung/logands/configs/audio_policy.conf:system/etc/audio_policy.conf \
@@ -42,7 +43,7 @@ PRODUCT_COPY_FILES += \
 # Insecure ADBD
 ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.adb.secure=0 \
-	persist.service.adb.enable=1
+	persist.service.adb.enable=0
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -65,12 +66,10 @@ PRODUCT_PACKAGES += \
 	audio.primary.default
 
 # Device-specific packages
-# libsecril-client \
-# libusb_config \
 PRODUCT_PACKAGES += \
 	SamsungServiceMode \
 	Torch
-	
+
 # KSM
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.ksm.default=1	
@@ -103,7 +102,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
-	
+
 # Support for Browser's saved page feature. This allows
 # for pages saved on previous versions of the OS to be
 # viewed on the current OS.
