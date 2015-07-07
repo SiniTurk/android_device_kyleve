@@ -16,6 +16,8 @@ PRODUCT_COPY_FILES += \
 	device/samsung/logands/ramdisk/init.hawaii_ss_logands.rc:root/init.hawaii_ss_logands.rc \
 	device/samsung/logands/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
 	device/samsung/logands/ramdisk/init.log.rc:root/init.log.rc \
+	device/samsung/logands/ramdisk/lpm.rc:root/lpm.rc \
+	device/samsung/logands/ramdisk/charger:root/charger \
 	device/samsung/logands/ramdisk/ueventd.hawaii_ss_logands.rc:root/ueventd.hawaii_ss_logands.rc
 	
 PRODUCT_COPY_FILES += \
@@ -39,8 +41,8 @@ PRODUCT_COPY_FILES += \
 #        device/samsung/baffinlite/MultiSIM-Toggle.apk:system/app/MultiSIM-Toggle.apk
 
 # Charger
-PRODUCT_PACKAGES += \
-	charger_res_images
+#PRODUCT_PACKAGES += \
+#	charger_res_images
 
 # Insecure ADBD
 ADDITIONAL_DEFAULT_PROPERTIES += \
