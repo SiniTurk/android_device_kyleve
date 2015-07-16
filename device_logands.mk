@@ -41,8 +41,8 @@ PRODUCT_COPY_FILES += \
 #        device/samsung/baffinlite/MultiSIM-Toggle.apk:system/app/MultiSIM-Toggle.apk
 
 # Charger
-#PRODUCT_PACKAGES += \
-#	charger_res_images
+PRODUCT_PACKAGES += \
+    charger_res_images
 
 # Insecure ADBD
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -51,12 +51,9 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-	setup_fs \
-	e2fsck \
-	f2fstat \
-	fsck.f2fs \
-	fibmap.f2fs \
-	mkfs.f2fs
+	make_ext4fs \
+    e2fsck \
+    setup_fs
 		
 # Usb accessory
 PRODUCT_PACKAGES += \
@@ -84,6 +81,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
 	dhcpcd.conf \
 	hostapd \
+	libnetcmdiface \
 	wpa_supplicant \
 	wpa_supplicant.conf	
 
