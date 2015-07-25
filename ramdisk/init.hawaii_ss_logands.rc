@@ -300,10 +300,7 @@ on boot
     chown bluetooth bluetooth /dev/ttyS0
     chmod 0666 /dev/ttyS0
     
-#for fm radio    
-    #copy /system/etc/local.prop /data/local.prop
-    #chown system bluetooth /data/local.prop
-    #chmod 0660 /data/local.prop
+
 
 # SEC_PRODUCT_FEATURE_COMMON_USE_MULTISIM
     setprop ro.multisim.simslotcount 2
