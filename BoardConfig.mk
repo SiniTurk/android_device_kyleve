@@ -75,10 +75,8 @@ HWUI_COMPILE_FOR_PERF := true
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DHAWAII_HWC
 
 # Camera
-BOARD_NEEDS_MEMORYHEAPION := true
 BOARD_USE_METADATABUFFERTYPE := true
 BOARD_USE_STOREMETADATA := true
-BOARD_USES_LEGACY_MMAP := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
@@ -113,9 +111,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 CHARGING_ENABLED_PATH := "/sys/class/power_supply/battery/batt_lp_charging"
 BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
-
-# Sensor
-SENSORS_NEED_SETRATE_ON_ENABLE := true
 
 # healthd
 BOARD_HAL_STATIC_LIBRARIES := libhealthd-logands.hawaii

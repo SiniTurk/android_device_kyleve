@@ -73,9 +73,3 @@
 
 # TTY
 /dev/ttyS0              	 0600   bluetooth  bluetooth
-
-# BT lock
-/dev/btlock               0600   bluetooth  bluetooth
-
-# rfkill
-/dev/rfkill               0660   root       wifi
