@@ -81,12 +81,6 @@ BOARD_USE_STOREMETADATA := true
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-# libutils
-#COMMON_GLOBAL_CFLAGS += -DREFBASE_JB_MR1_COMPAT_SYMBOLS
-
-# libwvm.so
-#COMMON_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
-
 # opengl
 BOARD_USE_BGRA_8888 := true
 
