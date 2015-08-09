@@ -252,13 +252,13 @@ on boot
     chown -R system system /sys/devices/platform/bcmpmu*/*
 # */
 # change owner of mtest system to allow atx/atxd to write this file:
-    chown system system /sys/kernel/sysrpc/mtest
+    #chown system system /sys/kernel/sysrpc/mtest
 
 # fake some battery state
     setprop status.battery.state Slow
-    setprop status.battery.level 5
-    setprop status.battery.level_raw  50
-    setprop status.battery.level_scale 9
+    setprop status.battery.level 10
+    setprop status.battery.level_raw  100
+    setprop status.battery.level_scale 10
 
 # Set permission for Widevine DRM temporarily
     chmod 0777 /dev/s5p-smem
