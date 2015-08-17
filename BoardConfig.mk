@@ -23,8 +23,9 @@ TARGET_OTA_ASSERT_DEVICE := logands,S7272,GT-S7272,hawaii
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
 #TARGET_GCC_VERSION_EXP := 4.8
-TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_cm_defconfig
-TARGET_KERNEL_SOURCE := device/samsung/logands/kernel
+#TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_cm_defconfig
+TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_defconfig
+TARGET_KERNEL_SOURCE := device/samsung/logands/kernel_test
 
 # PARTITION SIZE
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -69,9 +70,9 @@ BOARD_EGL_CFG := device/samsung/logands/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_USE_MHEAP_SCREENSHOT := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
-#TARGET_USES_ION := true
-#HWUI_COMPILE_FOR_PERF := true
-COMMON_GLOBAL_CFLAGS += -DHAWAII_HWC
+TARGET_USES_ION := true
+HWUI_COMPILE_FOR_PERF := true
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DHAWAII_HWC
 #TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 # Camera
@@ -100,14 +101,14 @@ TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Charger
-#BOARD_BATTERY_DEVICE_NAME := battery
+BOARD_BATTERY_DEVICE_NAME := battery
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
-#CHARGING_ENABLED_PATH := "/sys/class/power_supply/battery/batt_lp_charging"
-#BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
+CHARGING_ENABLED_PATH := "/sys/class/power_supply/battery/batt_lp_charging"
+BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 
 # healthd
-#BOARD_HAL_STATIC_LIBRARIES := libhealthd-logands.hawaii
+BOARD_HAL_STATIC_LIBRARIES := libhealthd-logands.hawaii
 
 # RIL
 BOARD_RIL_CLASS := ../../../device/samsung/logands/ril/
