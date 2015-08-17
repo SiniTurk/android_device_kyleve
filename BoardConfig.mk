@@ -25,9 +25,10 @@ TARGET_OTA_ASSERT_DEVICE := logands,S7272,GT-S7272,hawaii
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
 #TARGET_GCC_VERSION_EXP := 4.8
-#TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_cm_defconfig
-TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_defconfig
-TARGET_KERNEL_SOURCE := device/samsung/logands/kernel_test
+TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_cm_defconfig
+TARGET_KERNEL_SOURCE := device/samsung/logands/kernel
+#TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_defconfig
+#TARGET_KERNEL_SOURCE := device/samsung/logands/kernel_test
 
 # PARTITION SIZE
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
