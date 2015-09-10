@@ -434,7 +434,7 @@ on boot
 # disable swap page clustering -- recommended in https://source.android.com/devices/low-ram.html
     #write /proc/sys/vm/page-cluster 0	
 		
-#on charger
+on charger
 	mount ext4 /dev/block/mmcblk0p17 /system ro wait noatime
     exec sfsck /dev/block/mmcblk0p19 ext4
 	mount ext4 /dev/block/mmcblk0p19 /data wait nosuid nodev noatime discard,noauto_da_alloc,journal_async_commit
