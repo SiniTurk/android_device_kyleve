@@ -39,8 +39,8 @@ PRODUCT_COPY_FILES += \
 #   device/samsung/baffinlite/MultiSIM-Toggle.apk:system/app/MultiSIM-Toggle.apk
 
 # Charger
-PRODUCT_PACKAGES += \
-	charger_res_images
+#PRODUCT_PACKAGES += \
+#	charger_res_images
 
 # Insecure ADBD
 ADDITIONAL_DEFAULT_PROPERTIES += \
