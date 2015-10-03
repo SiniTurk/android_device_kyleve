@@ -21,13 +21,10 @@ TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_OTA_ASSERT_DEVICE := logands,S7272,GT-S7272,hawaii
 
 # Kernel
-#BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=456M gpt v3d_mem=67108864 pmem=24M@0x9E800000
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
-#TARGET_GCC_VERSION_EXP := 4.8
 TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_cm_defconfig
-TARGET_KERNEL_SOURCE := device/samsung/logands/kernel2
-#TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_defconfig
+TARGET_KERNEL_SOURCE := device/samsung/logands/kernel_new
 
 # PARTITION SIZE
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
