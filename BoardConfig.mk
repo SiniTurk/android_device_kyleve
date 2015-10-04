@@ -24,7 +24,7 @@ TARGET_OTA_ASSERT_DEVICE := logands,S7272,GT-S7272,hawaii
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
 TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_cm_defconfig
-TARGET_KERNEL_SOURCE := device/samsung/logands/kernel_new
+TARGET_KERNEL_SOURCE := device/samsung/logands/kernel
 
 # PARTITION SIZE
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -101,7 +101,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Charger
 BOARD_BATTERY_DEVICE_NAME := battery
-#BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 CHARGING_ENABLED_PATH := "/sys/class/power_supply/battery/batt_lp_charging"
 BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
