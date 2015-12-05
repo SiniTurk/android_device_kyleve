@@ -8,6 +8,7 @@ persist.brcm.ap_crash=none
 
 rild.libpath=/system/lib/libbrcm_ril.so
 #rild.libargs=-d /dev/ttyS0
+ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock
 ro.sf.lcd_density=240
 ro.lcd_brightness=160
 ro.lcd_min_brightness=18
