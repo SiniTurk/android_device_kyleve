@@ -65,6 +65,9 @@ WIFI_BAND                   := 802_11_ABG
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
+# Enable WEBGL in WebKit
+ENABLE_WEBGL                := true
+
 # Hardware rendering
 BOARD_EGL_CFG := device/samsung/logands/configs/egl.cfg
 USE_OPENGL_RENDERER := true
