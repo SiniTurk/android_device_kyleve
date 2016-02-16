@@ -444,8 +444,8 @@ on charger
     write /sys/devices/platform/s5p-ehci/power/control auto
 			  
 on fs
-    mount_all /fstab.hawaii_ss_logands
-#	swapon_all fstab.hawaii_ss_logands
+    mount_all /fstab.hawaii_ss_kyleve
+#	swapon_all fstab.hawaii_ss_kyleve
 	
     setprop ro.crypto.fuse_sdcard true
 

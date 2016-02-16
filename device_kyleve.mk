@@ -1,38 +1,38 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-$(call inherit-product-if-exists, vendor/samsung/logands/logands-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/kyleve/kyleve-common-vendor.mk)
 
 # Use high-density artwork where available
 PRODUCT_LOCALES += hdpi
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-DEVICE_PACKAGE_OVERLAYS += device/samsung/logands/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/kyleve/overlay
 
 # Init files
 PRODUCT_COPY_FILES += \
-	device/samsung/logands/ramdisk/fstab.hawaii_ss_logands:root/fstab.hawaii_ss_logands \
-	device/samsung/logands/ramdisk/init.rc:root/init.rc \
-	device/samsung/logands/ramdisk/init.hawaii_ss_logands.rc:root/init.hawaii_ss_logands.rc \
-	device/samsung/logands/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
-	device/samsung/logands/ramdisk/init.log.rc:root/init.log.rc \
-	device/samsung/logands/ramdisk/charger:root/charger \
-	device/samsung/logands/ramdisk/ueventd.hawaii_ss_logands.rc:root/ueventd.hawaii_ss_logands.rc
+	device/samsung/kyleve/ramdisk/fstab.hawaii_ss_kyleve:root/fstab.hawaii_ss_kyleve \
+	device/samsung/kyleve/ramdisk/init.rc:root/init.rc \
+	device/samsung/kyleve/ramdisk/init.hawaii_ss_kyleve.rc:root/init.hawaii_ss_kyleve.rc \
+	device/samsung/kyleve/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
+	device/samsung/kyleve/ramdisk/init.log.rc:root/init.log.rc \
+	device/samsung/kyleve/ramdisk/charger:root/charger \
+	device/samsung/kyleve/ramdisk/ueventd.hawaii_ss_kyleve.rc:root/ueventd.hawaii_ss_kyleve.rc
 	
 PRODUCT_COPY_FILES += \
-	device/samsung/logands/configs/media_profiles.xml:system/etc/media_profiles.xml \
-	device/samsung/logands/configs/audio_policy.conf:system/etc/audio_policy.conf \
+	device/samsung/kyleve/configs/media_profiles.xml:system/etc/media_profiles.xml \
+	device/samsung/kyleve/configs/audio_policy.conf:system/etc/audio_policy.conf \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
- 	device/samsung/logands/configs/media_codecs.xml:system/etc/media_codecs.xml 
+ 	device/samsung/kyleve/configs/media_codecs.xml:system/etc/media_codecs.xml 
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
-	device/samsung/logands/keylayouts/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
-	device/samsung/logands/keylayouts/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
-	device/samsung/logands/keylayouts/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-	device/samsung/logands/keylayouts/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl
+	device/samsung/kyleve/keylayouts/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
+	device/samsung/kyleve/keylayouts/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
+	device/samsung/kyleve/keylayouts/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+	device/samsung/kyleve/keylayouts/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -130,6 +130,6 @@ else
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_logands
-PRODUCT_DEVICE := logands
+PRODUCT_NAME := full_kyleve
+PRODUCT_DEVICE := kyleve
 PRODUCT_MODEL := GT-S7272

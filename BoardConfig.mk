@@ -1,7 +1,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/samsung/logands/BoardConfigVendor.mk
+-include vendor/samsung/kyleve/BoardConfigVendor.mk
 
 # Platform
 TARGET_ARCH := arm
@@ -18,13 +18,13 @@ TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := logands,S7272,GT-S7272,hawaii
+TARGET_OTA_ASSERT_DEVICE := kyleve,S7272,GT-S7272,hawaii
 
 # Kernel
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_logands_rev01_cm_defconfig
-TARGET_KERNEL_SOURCE := device/samsung/logands/kernel
+TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_kyleve_rev01_cm_defconfig
+TARGET_KERNEL_SOURCE := device/samsung/kyleve/kernel
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
 
 # PARTITION SIZE
@@ -39,8 +39,8 @@ BOARD_FLASH_BLOCK_SIZE := 262144 #BOARD_KERNEL_PAGESIZE * 64
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/logands/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/logands/bluetooth/libbt_vndcfg_s7272.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/kyleve/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/kyleve/bluetooth/libbt_vndcfg_s7272.txt
 
 # Connectivity - Wi-Fi
 BOARD_HAVE_SAMSUNG_WIFI     := true
@@ -69,7 +69,7 @@ TARGET_SCREEN_WIDTH := 480
 ENABLE_WEBGL                := true
 
 # Hardware rendering
-BOARD_EGL_CFG := device/samsung/logands/configs/egl.cfg
+BOARD_EGL_CFG := device/samsung/kyleve/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_USE_MHEAP_SCREENSHOT := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
@@ -98,7 +98,7 @@ CHARGING_ENABLED_PATH := "/sys/class/power_supply/battery/batt_lp_charging"
 BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 
 # healthd
-BOARD_HAL_STATIC_LIBRARIES := libhealthd-logands.hawaii
+BOARD_HAL_STATIC_LIBRARIES := libhealthd-kyleve.hawaii
 
 # Use the CM PowerHAL
 TARGET_USES_CM_POWERHAL := true
@@ -106,11 +106,11 @@ CM_POWERHAL_EXTENSION := hawaii
 TARGET_POWERHAL_VARIANT = cm
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/samsung/logands/ril/
+BOARD_RIL_CLASS := ../../../device/samsung/kyleve/ril/
 
 # Recovery
 #TARGET_RECOVERY_INITRC := 
-TARGET_RECOVERY_FSTAB := device/samsung/logands/ramdisk/fstab.hawaii_ss_logands
+TARGET_RECOVERY_FSTAB := device/samsung/kyleve/ramdisk/fstab.hawaii_ss_kyleve
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -124,10 +124,10 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 TARGET_RECOVERY_DENSITY := hdpi
 
 # CMHW
-BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/logands/cmhw/
+BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/kyleve/cmhw/
 
 # GPS
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/logands/include
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/kyleve/include
 
 # Compat
 TARGET_USES_LOGD := false
@@ -136,7 +136,7 @@ TARGET_USES_LOGD := false
 MALLOC_IMPL := dlmalloc
 
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/logands/sepolicy
+    device/samsung/kyleve/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file_contexts \
