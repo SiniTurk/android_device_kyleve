@@ -18,14 +18,14 @@ TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := kyleve,S7272,GT-S7272,hawaii
+TARGET_OTA_ASSERT_DEVICE := kyleve,S7392,GT-S7392,hawaii
 
 # Kernel
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_kyleve_rev01_cm_defconfig
-TARGET_KERNEL_SOURCE := device/samsung/kyleve/kernel
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
+TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_kyleve_rev00_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/kyleve
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 
 # PARTITION SIZE
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -40,7 +40,7 @@ BOARD_FLASH_BLOCK_SIZE := 262144 #BOARD_KERNEL_PAGESIZE * 64
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/kyleve/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/kyleve/bluetooth/libbt_vndcfg_s7272.txt
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/kyleve/bluetooth/libbt_vndcfg_S7392.txt
 
 # Connectivity - Wi-Fi
 BOARD_HAVE_SAMSUNG_WIFI     := true
