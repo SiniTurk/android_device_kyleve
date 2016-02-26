@@ -1,4 +1,4 @@
-android_device_logands
+android_device_kyleve
 ======================
 
-Device tree for Samsung Galaxy Ace 3 GT-S7272 (2 SIM)
+Device tree for Samsung Galaxy Trend (2 SIM)
