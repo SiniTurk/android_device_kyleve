@@ -110,7 +110,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/kyleve/ril/
 
 # Recovery
 #TARGET_RECOVERY_INITRC := 
-TARGET_RECOVERY_FSTAB := device/samsung/kyleve/ramdisk/fstab.hawaii_ss_kyleve
+TARGET_RECOVERY_FSTAB := device/samsung/kyleve/rootdir/etc/fstab.hawaii_ss_kyleve
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true

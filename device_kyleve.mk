@@ -27,13 +27,10 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
  	device/samsung/kyleve/configs/media_codecs.xml:system/etc/media_codecs.xml 
 
-# Prebuilt kl keymaps
-PRODUCT_COPY_FILES += \
-	device/samsung/kyleve/keylayouts/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
-	device/samsung/kyleve/keylayouts/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
-	device/samsung/kyleve/keylayouts/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-	device/samsung/kyleve/keylayouts/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl
-
+PRODUCT_PACKAGES += \
+               bcm_headset.kl \
+               bcm_keypad_v2.kl \
+               samsung-keypad.kl \
 # Charger
 PRODUCT_PACKAGES += \
 	charger_res_images
