@@ -17,7 +17,8 @@ PRODUCT_PACKAGES += \
 	init.bcm2166x.usb.rc \
 	init.log.rc \
 	charger \
-	ueventd.hawaii_ss_kyleve.rc
+	ueventd.hawaii_ss_kyleve.rc \
+        lpm.rc
 	
 PRODUCT_COPY_FILES += \
 	device/samsung/kyleve/configs/media_profiles.xml:system/etc/media_profiles.xml \
