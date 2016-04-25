@@ -8,10 +8,10 @@ function kyleve
  mk_timer mka bacon -j4
 }
 
-function compile_error
+function patch_fix
 {
 echo "patching cm-11.0 sources"
-time patch -p1 <device/samsung/kyleve/patches/patch.diff
+time patch -p1 <device/samsung/kyleve/patche/patch.diff
 echo "done"
 }
 
