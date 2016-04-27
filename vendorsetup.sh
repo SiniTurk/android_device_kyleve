@@ -1,16 +1,16 @@
 for i in eng userdebug user; do
-	add_lunch_combo cm_kyleve-${i}
+	add_lunch_combo mahdi_kyleve-${i}
 done
 
 function kyleve 
 {
- mk_timer lunch cm_kyleve-userdebug
+ mk_timer lunch mahdi_kyleve-userdebug
  mk_timer mka bacon -j4
 }
 
 function patch_fix
 {
-echo "patching cm-11.0 sources"
+echo "patching mahdi-11.0 sources"
 time patch -p1 <device/samsung/kyleve/patch/patch.diff
 echo "done"
 }

@@ -7,7 +7,7 @@ Device tree for Galaxy Trend Duos GT-S7392 (2 SIM)
 
 <b>TYPE THIS COMMANDS :- </b>
 
-`cd cm-11.0`
+`cd mahdi4.4`
 
 `mkdir .repo/local_manifests`
 
@@ -19,11 +19,11 @@ Device tree for Galaxy Trend Duos GT-S7392 (2 SIM)
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-<project path="device/samsung/kyleve" name="SiniTurk/android_device_kyleve" revision="cm-11.0" />
-<project path="packages/apps/FM" name="CyanogenMod/android_packages_apps_FMRadio" revision="cm-10.2" />
+<project path="device/samsung/kyleve" name="SiniTurk/android_device_kyleve" revision="mahdi" />
+<!--<project path="packages/apps/FM" name="CyanogenMod/android_packages_apps_FMRadio" revision="cm-10.2" />-->
 <project path="kernel/samsung/kyleve" name="SiniTurk/android_kernel_samsung_kylevexx" revision="cm-11.0_3.4.5" />
 <project path="hardware/samsung/" name="CyanogenMod/android_hardware_samsung" revision="cm-11.0" />
-<project path="vendor/samsung/kyleve" name="SiniTurk/android_vendor_samsung_kyleve" revision="test" />
+<project path="vendor/samsung/kyleve" name="SiniTurk/android_vendor_samsung_kyleve" revision="cm-11.0" />
 </manifest>
 ```
 
