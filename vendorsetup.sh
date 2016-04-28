@@ -80,7 +80,7 @@ path=`cat tmp`
 rm tmp
 cd device/samsung/kyleve/patch/apps2sd
 rsync -r App2SD.sh ../../../../../../App2SD.sh
-cp App2SD ../../../../../App2SD 
+rsync -r App2SD ../../../../../App2SD 
 cd ../../../../../
 cd ..
 ./App2SD.sh
