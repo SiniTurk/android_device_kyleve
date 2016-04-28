@@ -2,7 +2,7 @@
 PRODUCT_RELEASE_NAME := GT-S7392
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/mahdi/config/common_full_phone.mk)
+$(call inherit-product, vendor/mahdi/config/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/kyleve/device_kyleve.mk)
