@@ -41,9 +41,6 @@ static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
 char const* const PANEL_FILE
         = "/sys/class/backlight/panel/brightness";
 
-char const* const BUTTON_FILE
-        = "/sys/class/backlight/touchkey-led/brightness";
-
 /**
  * device methods
  */
@@ -115,7 +112,6 @@ set_light_buttons(struct light_device_t* dev,
     int on = is_lit(state);
 
     pthread_mutex_lock(&g_lock);
-    err = write_int(BUTTON_FILE, on?1:0);
     pthread_mutex_unlock(&g_lock);
 
     return err;
