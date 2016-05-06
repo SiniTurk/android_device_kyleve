@@ -7,7 +7,7 @@ Device tree for Galaxy Trend Duos GT-S7392 (2 SIM)
 
 <b>TYPE THIS COMMANDS :- </b>
 
-`cd cm-11.0`
+`cd cm-10.0`
 
 `mkdir .repo/local_manifests`
 
