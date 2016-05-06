@@ -15,14 +15,14 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/kyleve/overlay
 # Init files
 PRODUCT_COPY_FILES += \
 	device/samsung/kyleve/ramdisk/fstab.hawaii_ss_kyleve:root/fstab.hawaii_ss_kyleve \
-	device/samsung/kyleve/ramdisk/init.rc:root/init.rc \
 	device/samsung/kyleve/ramdisk/init.hawaii_ss_kyleve.rc:root/init.hawaii_ss_kyleve.rc \
 	device/samsung/kyleve/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
 	device/samsung/kyleve/ramdisk/init.log.rc:root/init.log.rc \
+	system/core/rootdir/init.rc:root/init.rc \
 	device/samsung/kyleve/ramdisk/lpm.rc:root/lpm.rc \
 	device/samsung/kyleve/ramdisk/charger:root/charger \
 	device/samsung/kyleve/ramdisk/ueventd.hawaii_ss_kyleve.rc:root/ueventd.hawaii_ss_kyleve.rc
-	
+
 PRODUCT_COPY_FILES += \
 	device/samsung/kyleve/configs/media_profiles.xml:system/etc/media_profiles.xml \
 	device/samsung/kyleve/configs/audio_policy.conf:system/etc/audio_policy.conf \
@@ -76,7 +76,7 @@ PRODUCT_PACKAGES += \
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+	frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
 	frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
 	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
 	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \

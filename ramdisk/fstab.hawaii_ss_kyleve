@@ -1,18 +1,10 @@
-# Android fstab file.
-# The filesystem that contains the filesystem checker binary (typically /system) cannot
-# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
-
-#<src>                                        <mnt_point>       <type>  <mnt_flags and options>                 					<fs_mgr_flags>
-/dev/block/platform/sdhci.1/by-name/system     /system           ext4    ro,noatime                                                  wait
-/dev/block/platform/sdhci.1/by-name/efs        /efs              ext4    noatime,nosuid,nodev,journal_async_commit,errors=panic      wait,check
-/dev/block/platform/sdhci.1/by-name/CSC        /cache            ext4    noatime,nosuid,nodev,journal_async_commit,errors=panic      wait,check
-/dev/block/platform/sdhci.1/by-name/userdata   /data             ext4    noatime,nosuid,nodev,discard,noauto_da_alloc,journal_async_commit,errors=panic    wait,check,encryptable=footer,length=-16384
-/dev/block/platform/sdhci.1/by-name/KERNEL     /boot             emmc    defaults                                					 defaults
-/dev/block/platform/sdhci.1/by-name/RECOVERY   /recovery         emmc    defaults                                					 defaults
-/dev/block/platform/sdhci.1/by-name/modem	   /modem 		     emmc 	 defaults 					                                 defaults
-#/dev/block/platform/sdhci.1/by-name/HIDDEN    /preload 	     ext4 	 defaults 					                                 recoveryonly
-
-# vold-managed volumes ("block device" is actually a sysfs devpath)
-/devices/platform/sdhci.0/mmc_host/mmc2       auto  			auto     defaults                                                    voldmanaged=sdcard1:auto,noemulatedsd
-/devices/platform/sdhci.0/mmc_host/mmc2       auto  			auto     defaults                                                    voldmanaged=sdcard2:auto,noemulatedsd
-#/devices/platform/dwc_otg/usb1 	  		  auto              auto     defaults                                                    voldmanaged=usbdisk:auto
+# mount point	fstype		device					device2
+/efs			ext4		/dev/block/mmcblk0p15
+/boot			emmc		/dev/block/mmcblk0p5
+/recovery		emmc		/dev/block/mmcblk0p6
+/cache			ext4		/dev/block/mmcblk0p16
+/system			ext4		/dev/block/mmcblk0p17
+/data			ext4		/dev/block/mmcblk0p19	length=-16384
+/preload		ext4		/dev/block/mmcblk0p18
+/sdcard			vfat		/dev/block/mmcblk1p1	/dev/block/mmcblk1
+/modem			emmc		/dev/block/mmcblk0p7
