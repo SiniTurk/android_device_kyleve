@@ -19,19 +19,14 @@ Device tree for Galaxy Trend Duos GT-S7392 (2 SIM)
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-<project path="device/samsung/kyleve" name="SiniTurk/android_device_kyleve" revision="cm-11.0" />
-<project path="packages/apps/FM2" name="legaCyMod/android_packages_apps_FM2" revision="cm-11.0" />
-<project path="kernel/samsung/kyleve" name="SiniTurk/android_kernel_samsung_kylevexx" revision="cm-11.0_3.4.5" />
+<project path="device/samsung/kyleve" name="SiniTurk/android_device_kyleve" revision="cm-10.0" />
+<project path="kernel/samsung/kyleve" name="SiniTurk/android_kernel_samsung_kylevexx" revision="stock" />
 <project path="hardware/samsung/" name="CyanogenMod/android_hardware_samsung" revision="cm-11.0" />
-<project path="vendor/samsung/kyleve" name="SiniTurk/android_vendor_samsung_kyleve" revision="test" />
+<project path="vendor/samsung/kyleve" name="SiniTurk/android_vendor_samsung_kyleve" revision="cm-11.0" />
 </manifest>
 ```
 
 `. build/envsetup.sh `
-
-`patch_fix`  // TO MAKE ROM STABLE
-
-`apps2sd` // If you want apps2sd feature
 
 `kyleve `
 

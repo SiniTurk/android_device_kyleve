@@ -8,24 +8,6 @@ function kyleve
  mk_timer mka bacon -j4
 }
 
-function patch_fix
-{
-echo "patching cm-11.0 sources"
-time patch -p1 <device/samsung/kyleve/patch/patch.diff
-echo "done"
-}
-
-function extract 
-{
-cd device/samsung/kyleve
-echo "####################"
-echo "Connect your device"
-echo "####################"
-adb  wait-for-device
-mk_timer ./extract-files.sh
-cd ../../../ 
-}
-
 function mk_timer()
 {
     local start_time=$(date +"%s")
@@ -73,11 +55,3 @@ rm $find
 cd ../../../
 }
 
-function apps2sd
-{
-rsync -r device/samsung/kyleve/patch/apps2sd/App2SD/* App2SD
-cp device/samsung/kyleve/patch/apps2sd/App2SD.sh ../App2SD.sh
-./../App2SD.sh
-rm ../App2SD.sh
-rm -rf App2SD
-}
