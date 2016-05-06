@@ -55,3 +55,11 @@ rm $find
 cd ../../../
 }
 
+function patch_fix
+{
+cp device/samsung/kyleve/patch/wpa_supplicant_overlay.conf hardware/broadcom/wlan/bcmdhd/config/wpa_supplicant_overlay.conf
+cp device/samsung/kyleve/patch/p2p_supplicant_overlay.conf hardware/broadcom/wlan/bcmdhd/config/p2p_supplicant_overlay.conf
+cp device/samsung/kyleve/patch/config-bcm.mk hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk
+patch -p1 <device/samsung/kyleve/patch/patch.diff
+}
+
