@@ -345,7 +345,7 @@ on boot
     mkdir /data/misc/radio/hatp 0775 radio system
 
 on fs
-    mount_all /fstab.capri_ss_baffin
+    mount_all /fstab.hawaii_ss_kyleve
     setprop ro.crypto.fuse_sdcard true
 
     # For NV Read/Write
