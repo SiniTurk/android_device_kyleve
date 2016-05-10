@@ -19,6 +19,9 @@ PRODUCT_COPY_FILES += \
 	device/samsung/kyleve/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
 	device/samsung/kyleve/ramdisk/init.log.rc:root/init.log.rc \
 	system/core/rootdir/init.rc:root/init.rc \
+	system/core/rootdir/init.trace.rc:root/init.trace.rc \
+	system/core/rootdir/init.usb.rc:root/init.usb.rc \
+	system/core/rootdir/ueventd.rc:root/ueventd.rc \
 	device/samsung/kyleve/ramdisk/lpm.rc:root/lpm.rc \
 	device/samsung/kyleve/ramdisk/charger:root/charger \
 	device/samsung/kyleve/ramdisk/ueventd.hawaii_ss_kyleve.rc:root/ueventd.hawaii_ss_kyleve.rc
