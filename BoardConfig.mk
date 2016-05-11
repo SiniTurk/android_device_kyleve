@@ -133,7 +133,7 @@ BOARD_SUPPRESS_EMMC_WIPE                    := true
 TARGET_RECOVERY_DENSITY                     := hdpi
 
 # CMHW
-BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/kyleve/cmhw/
+BOARD_HARDWARE_CLASS := device/samsung/kyleve/cmhw/
 
 # GPS
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/kyleve/include
