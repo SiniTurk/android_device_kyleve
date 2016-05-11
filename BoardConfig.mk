@@ -137,10 +137,3 @@ BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/kyleve/cmhw/
 
 # GPS
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/kyleve/include
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/kyleve/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    file_contexts

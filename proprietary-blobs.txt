@@ -8,6 +8,7 @@ bin/rild
 bin/mfgloader
 bin/wlandutservice
 bin/macloader
+#encoder and decoders
 lib/libbrcmmp3dec.so
 lib/libbrcmmp3enc.so
 lib/libmp3_dec_dummy.so
@@ -56,6 +57,7 @@ lib/libOMX.brcm.video.mpeg4.encoder.so
 lib/libOMX.brcm.video.vc1.hw.decoder.so
 lib/libvpx_dec.so
 lib/libOMX.brcm.video.vpx.decoder.so
+#
 lib/libtiming.so
 lib/libBrcmOMX_Component.so
 lib/libBrcmOMX_Core.so
@@ -72,11 +74,11 @@ lib/hw/sensors.hawaii.so
 lib/hw/alsa.default.so
 lib/hw/acoustics.default.so
 lib/hw/lights.hawaii.so
-#lib/hw/power.hawaii.so
 usr/lib/alsa-lib/libasound_module_pcm_bcmfilter.so
 usr/lib/alsa-lib/libbcm_hp_filter.so
 usr/lib/alsa-lib/libbcm_test_filter.so
 usr/share/alsa/alsa.conf
+#keylayout
 usr/keylayout/bcm_headset.kl
 usr/keylayout/bcm_keypad_v2.kl
 usr/keylayout/gpio-keys.kl
@@ -146,6 +148,7 @@ bin/playlpm
 bin/lpmkey
 bin/immvibed
 lib/libQmageDecoder.so
+#offline charging
 media/battery_batteryerror.qmg
 media/battery_charging_5.qmg
 media/battery_charging_10.qmg
