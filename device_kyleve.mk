@@ -16,9 +16,9 @@ PRODUCT_COPY_FILES += \
 	device/samsung/kyleve/ramdisk/init.hawaii_ss_kyleve.rc:root/init.hawaii_ss_kyleve.rc \
 	device/samsung/kyleve/ramdisk/init.bcm2166x.usb.rc:root/init.bcm2166x.usb.rc \
 	device/samsung/kyleve/ramdisk/init.log.rc:root/init.log.rc \
-	device/samsung/kyleve/ramdisk/charger:root/charger \
 	device/samsung/kyleve/ramdisk/ueventd.hawaii_ss_kyleve.rc:root/ueventd.hawaii_ss_kyleve.rc
-	
+#	device/samsung/kyleve/ramdisk/charger:root/charger \	
+
 PRODUCT_COPY_FILES += \
 	device/samsung/kyleve/configs/media_profiles.xml:system/etc/media_profiles.xml \
 	device/samsung/kyleve/configs/audio_policy.conf:system/etc/audio_policy.conf \
