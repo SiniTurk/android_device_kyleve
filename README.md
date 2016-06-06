@@ -1,22 +1,36 @@
-# Device tree for Samsung Galaxy Ace 3 GT-S7272 (2 SIM) (logands)
+android_device_kyleve
+======================
 
-### Specs (Physically inspected):
-  - CPU: Cortex-A9 (Little endian, Dual Core)
-  - Codename: LOGANDS
-  - Display Panel:  (TFT)
-  - Display Resolution: 480x800 (240dpi)
-  - EMMC: 4GB (Usable ~2.2GB)
-  - Family: KONA (BROADCOM)
-  - GPU: Broadcom VideoCore IV
-  - Misc: WIFI/Tether, Bluetooth, HSPA, GPS, FM-Radio, Dual SIM
-  - PMU: BCM59054
-  - Platform: HAWAII (BROADCOM)
-  - RAM: 768MB (not shared with GPU)
-  - Sensor: Accelerometer (BMC150), Compass (BMC150), Proximity (GP2AP002)
-  - Shipped with Android 4.2.2
-  - SoC: BCM21664G (1.0GHz)
-  - Touch Panel:
-  - WIFI/Bluetooth/FM-Radio: BCM4330
+Device tree for Galaxy Trend Duos GT-S7392 (2 SIM)
 
-### Notice:
-  - Apply patch *patch.diff* to root directory of source code before build
+<b>HOW TO COMPILE ?</b>
+
+<b>TYPE THIS COMMANDS :- </b>
+
+`cd cm-11.0`
+
+`mkdir .repo/local_manifests`
+
+`gedit .repo/local_manifests/kyleve.xml `
+
+<b>PASTE THIS INSIDE THAT FILE :- </b>
+
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<project path="device/samsung/kyleve" name="SiniTurk/android_device_kyleve" revision="cm-13.0" />
+<project path="kernel/samsung/kyleve" name="SiniTurk/android_kernel_samsung_kylevexx" revision="cm-13.0" />
+<project path="hardware/samsung/" name="CyanogenMod/android_hardware_samsung" revision="cm-13.0" />
+<project path="vendor/samsung/kyleve" name="SiniTurk/android_vendor_samsung_kyleve" revision="cm-13.0" />
+</manifest>
+```
+
+`. build/envsetup.sh `
+
+`patch -p1 <device/samsung/kyleve/paych/patch.diff`
+
+`kyleve `
+
+<b>FLASH THE ROM AND ENJOY!</b>
+
