@@ -2,7 +2,7 @@ USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
 -include vendor/samsung/kyleve/BoardConfigVendor.mk
-
+LOCAL_PATH := device/samsung/kyleve/
 # Platform
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
@@ -23,9 +23,13 @@ TARGET_OTA_ASSERT_DEVICE := kyleve,S7392,GT-S7392,hawaii
 # Kernel
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_kyleve_rev00_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/kyleve
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
+#TARGET_KERNEL_CONFIG := bcm21664_hawaii_ss_kyleve_rev00_defconfig
+#TARGET_KERNEL_SOURCE := kernel/samsung/kyleve
+#TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
+# Inline kernel building
+#TARGET_NO_KERNEL := true
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/kernel:kernel
 
 # PARTITION SIZE
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -119,7 +123,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/kyleve/ril/
 
 # Recovery
 #TARGET_RECOVERY_INITRC := 
-TARGET_RECOVERY_FSTAB := device/samsung/kyleve/rootdir/etc/fstab.hawaii_ss_kyleve
+TARGET_RECOVERY_FSTAB := device/samsung/kyleve/rootdir/fstab.hawaii_ss_kyleve
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
