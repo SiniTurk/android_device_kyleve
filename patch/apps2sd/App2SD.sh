@@ -3,7 +3,7 @@
 #put this in Root of your PAC Folder and run chmod +x App2SD.sh
 #Folder App2SD must in the root of your PAC Folder too
 
-SOURCE=~/cm11 # Edit to your PAC Folder
+SOURCE=~/omni # Edit to your PAC Folder
 
 #######################################################
 #    App2SD Support                                   #
